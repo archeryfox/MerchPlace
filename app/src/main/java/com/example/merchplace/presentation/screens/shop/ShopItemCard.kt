@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.sp
 import com.example.merchplace.shared.ui.LocalAsyncImage
 import com.example.merchplace.data.datasource.mock.MockProducts
 import com.example.merchplace.domain.entities.Product
-import com.example.merchplace.ui.theme.DarkBorder
 import com.example.merchplace.ui.theme.MerchPlaceTheme
 import com.example.merchplace.ui.theme.PrimaryRed
 import androidx.compose.ui.tooling.preview.Preview
@@ -36,7 +35,7 @@ fun ShopItemCard(
             .clickable(onClick = onClick)
             .border(
                 width = 1.dp,
-                color = DarkBorder,
+                color = MaterialTheme.colorScheme.outline,
                 shape = RoundedCornerShape(12.dp)
             ),
         colors = androidx.compose.material3.CardDefaults.cardColors(

@@ -9,13 +9,18 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.merchplace.presentation.screens.auctions.AuctionDetailScreen
 import com.example.merchplace.presentation.screens.auctions.AuctionsScreen
+import com.example.merchplace.presentation.screens.balance.BalanceScreen
+import com.example.merchplace.presentation.screens.balance.TransactionHistoryScreen
 import com.example.merchplace.presentation.screens.cart.CartScreen
+import com.example.merchplace.presentation.screens.checkout.CheckoutScreen
+import com.example.merchplace.presentation.screens.checkout.OrderConfirmationScreen
 import com.example.merchplace.presentation.screens.favorites.FavoritesScreen
 import com.example.merchplace.presentation.screens.feed.FeedScreen
 import com.example.merchplace.presentation.screens.home.HomeScreen
 import com.example.merchplace.presentation.screens.lotteries.LotteriesScreen
 import com.example.merchplace.presentation.screens.map.MapScreen
 import com.example.merchplace.presentation.screens.notifications.NotificationsScreen
+import com.example.merchplace.presentation.screens.orders.OrderHistoryScreen
 import com.example.merchplace.presentation.screens.profile.ProfileScreen
 import com.example.merchplace.presentation.screens.shop.ProductDetailScreen
 import com.example.merchplace.presentation.screens.shop.ShopScreen
@@ -84,6 +89,30 @@ fun NavGraph(
         composable(Screen.Favorites.route) {
             FavoritesScreen()
         }
+        composable(Screen.Checkout.route) {
+            CheckoutScreen(navController = navController)
+        }
+        composable(
+            route = Screen.OrderConfirmation.routeWithArgs,
+            arguments = listOf(
+                navArgument("orderId") { type = NavType.IntType }
+            )
+        ) { backStackEntry ->
+            val orderId = backStackEntry.arguments?.getInt("orderId") ?: 0
+            OrderConfirmationScreen(
+                orderId = orderId,
+                navController = navController
+            )
+        }
+        composable(Screen.OrderHistory.route) {
+            OrderHistoryScreen(navController = navController)
+        }
+        composable(Screen.Balance.route) {
+            BalanceScreen(navController = navController)
+        }
+        composable(Screen.TransactionHistory.route) {
+            TransactionHistoryScreen()
+        }
     }
 }
 
@@ -106,5 +135,13 @@ sealed class Screen(val route: String) {
         const val routeWithArgs = "auction/{auctionId}"
         fun createRoute(auctionId: Int) = "auction/$auctionId"
     }
+    object Checkout : Screen("checkout")
+    object OrderConfirmation : Screen("order_confirmation/{orderId}") {
+        const val routeWithArgs = "order_confirmation/{orderId}"
+        fun createRoute(orderId: Int) = "order_confirmation/$orderId"
+    }
+    object OrderHistory : Screen("order_history")
+    object Balance : Screen("balance")
+    object TransactionHistory : Screen("transaction_history")
 }
 

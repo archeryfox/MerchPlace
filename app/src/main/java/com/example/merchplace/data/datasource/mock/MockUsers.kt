@@ -20,7 +20,8 @@ object MockUsers {
             location = "Павильон A, Стенд 42",
             donationEnabled = true,
             donationGoal = 50000,
-            donationCurrent = 32500
+            donationCurrent = 32500,
+            balance = 5000
         ),
         User(
             id = 2,
@@ -38,7 +39,8 @@ object MockUsers {
             location = "Павильон B, Стенд 15",
             donationEnabled = true,
             donationGoal = 75000,
-            donationCurrent = 68000
+            donationCurrent = 68000,
+            balance = 7500
         )
     )
 }

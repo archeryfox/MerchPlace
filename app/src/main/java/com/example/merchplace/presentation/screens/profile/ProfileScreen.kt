@@ -1,6 +1,8 @@
 package com.example.merchplace.presentation.screens.profile
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -29,6 +31,7 @@ fun ProfileScreen(
     viewModel: ProfileViewModel = viewModel()
 ) {
     val currentUser by viewModel.currentUser.collectAsState()
+    val balance by viewModel.balance.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
     
     if (isLoading) {
@@ -46,11 +49,12 @@ fun ProfileScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .padding(horizontal = 16.dp)
     ) {
         Spacer(modifier = Modifier.height(16.dp))
         
-        ProfileHeader(user = user)
+        ProfileHeader(user = user, balance = balance)
         
         Spacer(modifier = Modifier.height(16.dp))
         

@@ -3,7 +3,7 @@ package com.example.merchplace.domain.repository
 import com.example.merchplace.domain.entities.CartItem
 import kotlinx.coroutines.flow.StateFlow
 
-interface CartRepository {
+interface ICartRepository {
     fun getCartItems(): StateFlow<List<CartItem>>
     suspend fun addItem(item: CartItem)
     suspend fun removeItem(itemId: Int)

@@ -16,7 +16,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.merchplace.ui.theme.DarkBorder
 import com.example.merchplace.ui.theme.MerchPlaceTheme
 import com.example.merchplace.ui.theme.PrimaryRed
 
@@ -67,7 +66,7 @@ private fun CategoryChip(
             .clickable(onClick = onClick)
             .border(
                 width = 1.dp,
-                color = if (isSelected) PrimaryRed.copy(alpha = 0.3f) else DarkBorder,
+                color = if (isSelected) PrimaryRed.copy(alpha = 0.3f) else MaterialTheme.colorScheme.outline,
                 shape = RoundedCornerShape(20.dp)
             )
             .padding(horizontal = 16.dp, vertical = 8.dp)

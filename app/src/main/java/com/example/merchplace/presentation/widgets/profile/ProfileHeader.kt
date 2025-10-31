@@ -21,13 +21,13 @@ import com.example.merchplace.shared.ui.LocalAsyncImage
 import com.example.merchplace.data.datasource.mock.MockUsers
 import com.example.merchplace.domain.entities.User
 import com.example.merchplace.shared.ui.Badge
-import com.example.merchplace.ui.theme.DarkBorder
 import com.example.merchplace.ui.theme.MerchPlaceTheme
 import com.example.merchplace.ui.theme.PrimaryRed
 
 @Composable
 fun ProfileHeader(
     user: User,
+    balance: Int? = null,
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -130,6 +130,28 @@ fun ProfileHeader(
                         text = user.location,
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+            
+            if (balance != null) {
+                Spacer(modifier = Modifier.height(12.dp))
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.AccountCircle,
+                        contentDescription = null,
+                        tint = PrimaryRed,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = "Баланс: ${balance}₽",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = PrimaryRed
                     )
                 }
             }

@@ -18,7 +18,6 @@ import androidx.navigation.NavController
 import com.example.merchplace.presentation.features.cart.CartViewModel
 import com.example.merchplace.presentation.navigation.Screen
 import com.example.merchplace.shared.ui.Badge
-import com.example.merchplace.ui.theme.DarkBorder
 import com.example.merchplace.ui.theme.PrimaryRed
 
 @Composable
@@ -115,7 +114,7 @@ fun Header(
         }
         
         HorizontalDivider(
-            color = DarkBorder,
+            color = MaterialTheme.colorScheme.outline,
             thickness = 1.dp
         )
     }

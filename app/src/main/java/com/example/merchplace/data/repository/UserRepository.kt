@@ -2,12 +2,12 @@ package com.example.merchplace.data.repository
 
 import com.example.merchplace.data.datasource.mock.MockUsers
 import com.example.merchplace.domain.entities.User
-import com.example.merchplace.domain.repository.UserRepository
+import com.example.merchplace.domain.repository.IUserRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class UserRepositoryImpl : UserRepository {
+class UserRepository : IUserRepository {
     
     override suspend fun getCurrentUser(): User? {
         delay(300)

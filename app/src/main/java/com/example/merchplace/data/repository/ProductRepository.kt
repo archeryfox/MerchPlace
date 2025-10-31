@@ -2,15 +2,15 @@ package com.example.merchplace.data.repository
 
 import com.example.merchplace.data.datasource.mock.MockProducts
 import com.example.merchplace.domain.entities.Product
-import com.example.merchplace.domain.repository.ProductRepository
+import com.example.merchplace.domain.repository.IProductRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class ProductRepositoryImpl : ProductRepository {
+class ProductRepository : IProductRepository {
     
     override fun getProducts(category: String?): Flow<List<Product>> = flow {
-        delay(500) // Имитация сетевой задержки
+        delay(500)
         val products = if (category != null) {
             MockProducts.products.filter { it.category == category }
         } else {

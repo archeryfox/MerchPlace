@@ -1,21 +1,20 @@
 package com.example.merchplace.data.repository
 
-import com.example.merchplace.data.datasource.mock.MockUsers
 import com.example.merchplace.domain.entities.CartItem
-import com.example.merchplace.domain.repository.CartRepository
+import com.example.merchplace.domain.repository.ICartRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class CartRepositoryImpl : CartRepository {
+class CartRepository : ICartRepository {
     
     companion object {
         @Volatile
-        private var INSTANCE: CartRepositoryImpl? = null
+        private var INSTANCE: CartRepository? = null
         
-        fun getInstance(): CartRepositoryImpl {
+        fun getInstance(): CartRepository {
             return INSTANCE ?: synchronized(this) {
-                INSTANCE ?: CartRepositoryImpl().also { INSTANCE = it }
+                INSTANCE ?: CartRepository().also { INSTANCE = it }
             }
         }
     }

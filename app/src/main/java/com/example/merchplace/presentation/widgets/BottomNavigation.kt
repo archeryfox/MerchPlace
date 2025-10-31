@@ -11,7 +11,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.merchplace.presentation.navigation.Screen
-import com.example.merchplace.ui.theme.DarkBorder
 import com.example.merchplace.ui.theme.PrimaryRed
 
 data class BottomNavItem(

@@ -30,7 +30,6 @@ import com.example.merchplace.domain.entities.Product
 import com.example.merchplace.presentation.features.cart.CartViewModel
 import com.example.merchplace.shared.ui.Avatar
 import com.example.merchplace.shared.ui.Badge
-import com.example.merchplace.ui.theme.DarkBorder
 import com.example.merchplace.ui.theme.MerchPlaceTheme
 import com.example.merchplace.ui.theme.PrimaryRed
 

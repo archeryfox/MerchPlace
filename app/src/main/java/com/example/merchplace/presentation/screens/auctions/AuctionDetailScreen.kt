@@ -31,7 +31,6 @@ import com.example.merchplace.data.datasource.mock.MockAuctions
 import com.example.merchplace.domain.entities.Auction
 import com.example.merchplace.shared.ui.Avatar
 import com.example.merchplace.shared.ui.Badge
-import com.example.merchplace.ui.theme.DarkBorder
 import com.example.merchplace.ui.theme.MerchPlaceTheme
 import com.example.merchplace.ui.theme.PrimaryRed
 
@@ -225,7 +224,7 @@ private fun AuctionDetailContent(
                             color = MaterialTheme.colorScheme.onBackground
                         )
                     }
-                    HorizontalDivider(color = DarkBorder)
+                    HorizontalDivider(color = MaterialTheme.colorScheme.outline)
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
@@ -242,7 +241,7 @@ private fun AuctionDetailContent(
                             color = MaterialTheme.colorScheme.onBackground
                         )
                     }
-                    HorizontalDivider(color = DarkBorder)
+                    HorizontalDivider(color = MaterialTheme.colorScheme.outline)
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
@@ -259,7 +258,7 @@ private fun AuctionDetailContent(
                             color = PrimaryRed
                         )
                     }
-                    HorizontalDivider(color = DarkBorder)
+                    HorizontalDivider(color = MaterialTheme.colorScheme.outline)
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
@@ -276,7 +275,7 @@ private fun AuctionDetailContent(
                             color = MaterialTheme.colorScheme.onBackground
                         )
                     }
-                    HorizontalDivider(color = DarkBorder)
+                    HorizontalDivider(color = MaterialTheme.colorScheme.outline)
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween

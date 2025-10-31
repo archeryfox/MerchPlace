@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,10 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.merchplace.ui.theme.DarkBorder
-import com.example.merchplace.ui.theme.DarkCard
 import com.example.merchplace.ui.theme.MerchPlaceTheme
-import com.example.merchplace.ui.theme.TextPrimary
 
 @Composable
 fun MerchCard(
@@ -36,7 +34,7 @@ fun MerchCard(
                 }
             ),
         colors = CardDefaults.cardColors(
-            containerColor = DarkCard
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
         ),
         shape = RoundedCornerShape(12.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
@@ -46,7 +44,7 @@ fun MerchCard(
                 .fillMaxWidth()
                 .border(
                     width = 1.dp,
-                    color = DarkBorder,
+                    color = MaterialTheme.colorScheme.outline,
                     shape = RoundedCornerShape(12.dp)
                 )
                 .padding(16.dp),
@@ -67,12 +65,12 @@ private fun MerchCardPreview() {
                 text = "Пример карточки",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
-                color = TextPrimary
+                color = MaterialTheme.colorScheme.onSurface
             )
             Text(
                 text = "Это пример содержимого карточки",
                 fontSize = 14.sp,
-                color = TextPrimary
+                color = MaterialTheme.colorScheme.onSurface
             )
         }
     }

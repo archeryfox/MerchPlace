@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.sp
 import com.example.merchplace.shared.ui.LocalAsyncImage
 import com.example.merchplace.data.datasource.mock.MockAuctions
 import com.example.merchplace.domain.entities.Auction
-import com.example.merchplace.ui.theme.DarkBorder
 import com.example.merchplace.ui.theme.MerchPlaceTheme
 import com.example.merchplace.ui.theme.PrimaryRed
 
@@ -41,7 +40,7 @@ fun AuctionCard(
                 .fillMaxWidth()
                 .border(
                     width = 1.dp,
-                    color = DarkBorder,
+                    color = MaterialTheme.colorScheme.outline,
                     shape = RoundedCornerShape(12.dp)
                 )
         ) {

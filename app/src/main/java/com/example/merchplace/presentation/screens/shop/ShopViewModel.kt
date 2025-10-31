@@ -3,7 +3,7 @@ package com.example.merchplace.presentation.screens.shop
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.merchplace.domain.entities.Product
-import com.example.merchplace.domain.repository.ProductRepository
+import com.example.merchplace.domain.repository.IProductRepository
 import com.example.merchplace.shared.di.RepositoryProvider
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class ShopViewModel(
-    private val repository: ProductRepository = RepositoryProvider.productRepository
+    private val repository: IProductRepository = RepositoryProvider.productRepository
 ) : ViewModel() {
     
     private val _products = MutableStateFlow<List<Product>>(emptyList())

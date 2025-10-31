@@ -3,7 +3,7 @@ package com.example.merchplace.data.repository
 import com.example.merchplace.data.datasource.mock.MockAuctions
 import com.example.merchplace.domain.entities.Auction
 import com.example.merchplace.domain.entities.AuctionBid
-import com.example.merchplace.domain.repository.AuctionRepository
+import com.example.merchplace.domain.repository.IAuctionRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -11,7 +11,7 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import java.util.Date
 
-class AuctionRepositoryImpl : AuctionRepository {
+class AuctionRepository : IAuctionRepository {
     
     private val bids = mutableListOf<AuctionBid>()
     // Mutex для синхронизации операций со ставками и предотвращения race conditions

@@ -3,7 +3,6 @@ package com.example.merchplace.presentation.screens.auctions
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.merchplace.domain.entities.Auction
-import com.example.merchplace.domain.repository.AuctionRepository
 import com.example.merchplace.shared.di.RepositoryProvider
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class AuctionsViewModel(
-    private val repository: AuctionRepository = RepositoryProvider.auctionRepository
+    private val repository: com.example.merchplace.domain.repository.IAuctionRepository = RepositoryProvider.auctionRepository
 ) : ViewModel() {
     
     private val _auctions = MutableStateFlow<List<Auction>>(emptyList())

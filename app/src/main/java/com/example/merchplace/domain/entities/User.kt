@@ -16,6 +16,7 @@ data class User(
     val location: String,
     val donationEnabled: Boolean = false,
     val donationGoal: Int = 0,
-    val donationCurrent: Int = 0
+    val donationCurrent: Int = 0,
+    val balance: Int = 0
 )
 

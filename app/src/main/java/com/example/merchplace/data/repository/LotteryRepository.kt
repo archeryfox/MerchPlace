@@ -3,7 +3,7 @@ package com.example.merchplace.data.repository
 import com.example.merchplace.data.datasource.mock.MockLotteries
 import com.example.merchplace.domain.entities.Lottery
 import com.example.merchplace.domain.entities.LotteryTicket
-import com.example.merchplace.domain.repository.LotteryRepository
+import com.example.merchplace.domain.repository.ILotteryRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -11,7 +11,7 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import java.util.Date
 
-class LotteryRepositoryImpl : LotteryRepository {
+class LotteryRepository : ILotteryRepository {
     
     private val tickets = mutableListOf<LotteryTicket>()
     // Mutex для синхронизации операций с билетами и предотвращения race conditions

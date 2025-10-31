@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.merchplace.presentation.navigation.Screen
-import com.example.merchplace.ui.theme.DarkBackground
 import com.example.merchplace.ui.theme.MerchPlaceTheme
 import com.example.merchplace.ui.theme.PrimaryRed
 
@@ -34,7 +33,7 @@ fun Hero(
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(
-                        DarkBackground,
+                        MaterialTheme.colorScheme.background,
                         MaterialTheme.colorScheme.surface
                     )
                 )

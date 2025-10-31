@@ -3,7 +3,7 @@ package com.example.merchplace.presentation.features.cart
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.merchplace.domain.entities.CartItem
-import com.example.merchplace.domain.repository.CartRepository
+import com.example.merchplace.domain.repository.ICartRepository
 import com.example.merchplace.shared.di.RepositoryProvider
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class CartViewModel(
-    private val repository: CartRepository = RepositoryProvider.cartRepository
+    private val repository: ICartRepository = RepositoryProvider.cartRepository
 ) : ViewModel() {
     
     private val _cartItems = MutableStateFlow<List<CartItem>>(emptyList())

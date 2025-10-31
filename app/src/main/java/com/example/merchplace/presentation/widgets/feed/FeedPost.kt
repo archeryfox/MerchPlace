@@ -16,7 +16,6 @@ import com.example.merchplace.shared.ui.LocalAsyncImage
 import com.example.merchplace.domain.entities.FeedPost
 import com.example.merchplace.shared.ui.Avatar
 import com.example.merchplace.shared.ui.MerchCard
-import com.example.merchplace.ui.theme.DarkBorder
 import com.example.merchplace.ui.theme.PrimaryRed
 import java.text.SimpleDateFormat
 import java.util.*
@@ -103,7 +102,7 @@ fun FeedPost(
             
             Spacer(modifier = Modifier.height(12.dp))
             
-            HorizontalDivider(color = DarkBorder)
+            HorizontalDivider(color = MaterialTheme.colorScheme.outline)
             
             Spacer(modifier = Modifier.height(8.dp))
             

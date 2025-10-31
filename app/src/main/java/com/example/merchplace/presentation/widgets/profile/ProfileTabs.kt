@@ -15,14 +15,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.merchplace.data.datasource.mock.MockUsers
 import com.example.merchplace.domain.entities.User
-import com.example.merchplace.domain.repository.AuctionRepository
-import com.example.merchplace.domain.repository.ProductRepository
+import com.example.merchplace.domain.repository.IAuctionRepository
+import com.example.merchplace.domain.repository.IProductRepository
 import com.example.merchplace.presentation.screens.auctions.AuctionCard
 import com.example.merchplace.presentation.screens.auctions.AuctionsViewModel
 import com.example.merchplace.shared.di.RepositoryProvider
@@ -33,8 +31,8 @@ fun ProfileTabs(
     user: User,
     modifier: Modifier = Modifier,
     navController: NavController? = null,
-    auctionRepository: AuctionRepository = RepositoryProvider.auctionRepository,
-    productRepository: ProductRepository = RepositoryProvider.productRepository
+    auctionRepository: IAuctionRepository = RepositoryProvider.auctionRepository,
+    productRepository: IProductRepository = RepositoryProvider.productRepository
 ) {
     var selectedTab by remember { mutableStateOf(0) }
     
